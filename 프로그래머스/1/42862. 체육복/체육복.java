@@ -5,8 +5,8 @@ import java.util.ArrayList;
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = 0; 
-        selectionSort(lost);
-        selectionSort(reserve);
+        Arrays.sort(lost);
+        Arrays.sort(reserve);
 
         List<Integer> ll = new ArrayList<>();        
         for (int num : lost) {   
@@ -47,22 +47,5 @@ class Solution {
             answer = n - help + borrows;
         }
         return answer;
-    }
-    public static void selectionSort(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n - 1; i++) {
-            int least = i;
-            for (int j = i + 1; j < n; j++) {
-                if (arr[j] < arr[least]) {
-                    least = j;
-                }
-            }
-            swap(arr, i, least);
-        }
-    }
-    public static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
     }
 }
