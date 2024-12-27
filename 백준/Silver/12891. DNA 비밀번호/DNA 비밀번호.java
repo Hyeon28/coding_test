@@ -36,7 +36,6 @@ public class Main {
                 else if (removed == 'T') currentT--;
             }
 
-            // 조건 확인 (윈도우 크기가 p_length일 때만)
             if (i >= p_length - 1) {
                 if (currentA >= requiredA && currentC >= requiredC && currentG >= requiredG && currentT >= requiredT) {
                     count++;
